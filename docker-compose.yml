@@ -1,0 +1,36 @@
+version: "2"
+
+services:
+  mysql:
+    image: jonathanpe/docker-mysql
+    container_name: mysql
+    volumes:
+      - data:/var/lib/mysql
+      - ./conf/docker/mysql-conf.d:/etc/mysql/conf.d
+    ports:
+      - 3306:3306
+    restart: always
+    logging:
+      options:
+        max-size: "500k"
+        max-file: "2"
+  worth:
+    image: jonathanpe/worth
+    container_name: worth
+    restart: always
+    ports:
+      - 3002:3002
+    env_file: ${WORTH_REPO}/dotenv
+    depends_on:
+      - mysql
+    volumes:
+      - ${WORTH_REPO}/:/app
+volumes:
+  data:
+    external: true
+
+networks:
+  default:
+      external:
+          name: jpe
+
