@@ -1,5 +1,3 @@
-'use strict';
-
 const path = require('path');
 const Sequelize = require('sequelize');
 const logger = require('winston');

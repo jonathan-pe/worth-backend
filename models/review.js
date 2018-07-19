@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = function (sequelize, DataTypes) {
     let Review = sequelize.define('review', {
         id: {
