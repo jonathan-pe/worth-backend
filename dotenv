@@ -1,4 +1,4 @@
-DB_NAME=mysql
+DB_NAME=worth
 DB_USER=jpe
 DB_PASSWORD=jpe
-DB_HOST=jpe
+DB_HOST=mysql

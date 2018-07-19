@@ -4,7 +4,7 @@ logger.level = 'info';
 
 async function addReview(req, res) {
     const {name, category, price, description, worth} = req.body.review;
-    const params = {name, category, price, worth};
+    const params = {name, category, worth};
     const hasParams = Object.keys(params).reduce((all, param) => all && params[param], true);
 
     if (!hasParams) {
